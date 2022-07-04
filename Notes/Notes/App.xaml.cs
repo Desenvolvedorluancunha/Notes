@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using Notes.Data;
+using Notes.Views;
 using Xamarin.Forms;
 
 namespace Notes
@@ -26,6 +27,8 @@ namespace Notes
         {
             InitializeComponent();
             MainPage = new AppShell();
+
+            MainPage = new NavigationPage(new MoviesPage());
         }
 
         protected override void OnStart()

@@ -70,7 +70,12 @@
                    VerticalOptions="FillAndExpand" 
                    VerticalTextAlignment="Center"
                    HorizontalTextAlignment="Center"
-                   />
+                  />
+
+            <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignUpCommand}"/>
+             </StackLayout.GestureRecognizers>
+            
         </StackLayout>
     </Grid>
 </ContentPage>

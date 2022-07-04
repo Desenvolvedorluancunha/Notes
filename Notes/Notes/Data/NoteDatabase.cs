@@ -13,7 +13,7 @@ namespace Notes.Data
         {
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Note>().Wait();
-            database.CreateTableAsync<Note>().Wait();
+            database.CreateTableAsync<Usuario>().Wait();
         }
 
         public Task<List<Note>> GetNotesAsync()
@@ -41,6 +41,20 @@ namespace Notes.Data
             {
                 // Save a new note.
                 return database.InsertAsync(note);
+            }
+        }
+
+        public Task<int> SaveLogin(Usuario usuario)
+        {
+            if (usuario.ID != 0)
+            {
+                // Update an existing note.
+                return database.UpdateAsync(usuario);
+            }
+            else
+            {
+                // Save a new note.
+                return database.InsertAsync(usuario);
             }
         }
 

@@ -18,7 +18,7 @@ namespace Notes.Views
 
         async void Logar(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NotesPage());
+            await Navigation.PushAsync(new AppShell());
         }
     }
 }
