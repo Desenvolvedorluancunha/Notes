@@ -16,9 +16,14 @@ namespace Notes.Views
             }
         }
 
-        public NoteEntryPage()
+        public NoteEntryPage(Note filme)
         {
             InitializeComponent();
+
+            if(filme.Text != null)
+            {
+                ItemId = filme.ID.ToString();
+            }
 
             // Set the BindingContext of the page to a new Note.
             BindingContext = new Note();
@@ -49,7 +54,7 @@ namespace Notes.Views
             }
 
             // Navigate backwards
-            await Shell.Current.GoToAsync("..");
+            await Navigation.PopAsync();
         }
 
         async void OnDeleteButtonClicked(object sender, EventArgs e)
@@ -58,7 +63,7 @@ namespace Notes.Views
             await App.Database.DeleteNoteAsync(note);
 
             // Navigate backwards
-            await Shell.Current.GoToAsync("..");
+            await Navigation.PopAsync();
         }
     }
 }

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.View1">
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <StackLayout  Grid.Row="1">
+                <Button Text="Inserir Bloco De Notas"
+                    TextColor="White" 
+                    HeightRequest="50" 
+                        Clicked="Button_Clicked_3"/>
+            </StackLayout>
+            <StackLayout  Grid.Row="2">
+                <Button Text="Vizualizar bloco de notas"
+                    TextColor="White" 
+                    HeightRequest="50" 
+                        Clicked="Button_Clicked_2"/>
+            </StackLayout>
+            <StackLayout  Grid.Row="3">
+                <Button Text="pesquisar filmes"
+                    TextColor="White" 
+                    HeightRequest="50"
+                        Clicked="Button_Clicked"/>
+            </StackLayout>
+            <StackLayout  Grid.Row="4">
+                <Button Text="Cadastrar"
+                    TextColor="White" 
+                    HeightRequest="50" 
+                        Clicked="Button_Clicked_1"/>
+            </StackLayout>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

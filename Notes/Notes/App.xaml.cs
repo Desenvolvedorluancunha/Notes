@@ -28,7 +28,6 @@ namespace Notes
             InitializeComponent();
             MainPage = new AppShell();
 
-            MainPage = new NavigationPage(new MoviesPage());
         }
 
         protected override void OnStart()

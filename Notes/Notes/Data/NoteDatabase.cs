@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using SQLite;
 using Notes.Models;
+using System;
 
 namespace Notes.Data
 {
@@ -62,6 +63,38 @@ namespace Notes.Data
         {
             // Delete a note.
             return database.DeleteAsync(note);
+        }
+
+        public Task<Usuario> GeUsuarioAsync(Usuario usuario)
+        {
+            // Get a specific note.
+            var retorno = database.Table<Usuario>()
+                            .Where(i => i.NOME_USUARIO == usuario.NOME_USUARIO)
+                            .FirstOrDefaultAsync();
+
+            return retorno;
+        }
+
+        public Task<int> SaveUsuarioAsync(Usuario usuario)
+        {
+            try
+            {
+                if (usuario.ID != 0)
+                {
+                    // Update an existing note.
+                    return database.UpdateAsync(usuario);
+                }
+                else
+                {
+                    // Save a new note.
+                    return database.InsertAsync(usuario);
+                }
+            }
+            catch (Exception EX)
+            {
+
+                return null;
+            }
         }
     }
 }

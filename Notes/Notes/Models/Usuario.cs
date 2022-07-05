@@ -10,6 +10,8 @@ namespace Notes.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string NOME_USUARIO { get; set; }
+        public string NOME_COMPLETO { get; set; }
+        public string TELEFONE { get; set; }
         public string SENHA_USUARIO { get; set; }
     }
 }

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.CadastrarLoginPage"
+             Title="Registrar">
+
+
+    <Grid BackgroundColor="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="Login_s.png" HeightRequest="200" VerticalOptions="EndAndExpand"/>
+
+            <Entry x:Name="usuario"
+                   Grid.Row="1" 
+                   Placeholder="Nome Do usuario" 
+                   PlaceholderColor="#bababa"
+                   Text="{Binding NOME_USUARIO}"/>
+
+            <Entry x:Name="NOME_COMPLETO"
+                Grid.Row="2" 
+                   Placeholder="Nome Completo" 
+                   PlaceholderColor="#bababa" 
+                   Text="{Binding NOME_COMPLETO}"/>
+
+            <Entry x:Name="TELEFONE"
+                Grid.Row="3" 
+                   Placeholder="Telefone"
+                   PlaceholderColor="#bababa" 
+                   Text="{Binding TELEFONE}"/>
+
+            <Entry x:Name="SENHA_USUARIO"
+                Grid.Row="4" 
+                   Placeholder="Senha" 
+                   PlaceholderColor="#bababa" 
+                   Text="{Binding SENHA_USUARIO}"/>
+
+            <StackLayout  Grid.Row="5">
+                <Button Text="Cadastrar"
+                    TextColor="White" 
+                    HeightRequest="50" 
+                    Clicked="teste" />
+            </StackLayout>
+
+        </Grid>
+        
+    </Grid>
+
+    
+
+</ContentPage>

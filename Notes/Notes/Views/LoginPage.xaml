@@ -8,6 +8,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
             <Image Source="maco1b.jpg" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
@@ -17,6 +18,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="40"/>
@@ -24,9 +26,17 @@
             </Grid.RowDefinitions>
             <Image Source="Login_s.png" HeightRequest="200" VerticalOptions="EndAndExpand"/>
             
-            <Entry Grid.Row="1" Placeholder="Email ou Telefone" PlaceholderColor="#bababa" FontSize="16"/>
+            <Entry Grid.Row="1" 
+                   Placeholder="Email ou Telefone" 
+                   PlaceholderColor="#bababa" 
+                   FontSize="16"
+                   Text="{Binding NOME_USUARIO}"/>
             
-            <Entry Grid.Row="2" Placeholder="Senha" PlaceholderColor="#bababa" FontSize="16"/>
+            <Entry Grid.Row="2" 
+                   Placeholder="Senha" 
+                   PlaceholderColor="#bababa" 
+                   FontSize="16"
+                   Text="{Binding SENHA_USUARIO}"/>
             
             <Button Text="LogIn"
                     BackgroundColor="#3897f0" 
@@ -65,17 +75,13 @@
         </Grid>
         <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
             <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
-            
-            <Label Text="Não possui uma Conta ? Registre-se."
-                   VerticalOptions="FillAndExpand" 
-                   VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Center"
-                  />
 
-            <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding SignUpCommand}"/>
-             </StackLayout.GestureRecognizers>
-            
+            <Button Text="Registre-se"
+                    VerticalOptions="FillAndExpand" 
+                    HorizontalOptions="Center"
+                    Clicked="Resgistrar"
+                    />
+
         </StackLayout>
     </Grid>
 </ContentPage>
